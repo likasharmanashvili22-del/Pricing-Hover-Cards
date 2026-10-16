@@ -1,0 +1,167 @@
+:root {
+    --bg: #0f1020;
+    --card: #181a30;
+    --card-hi: #20234a;
+    --text: #e9eaf7;
+    --muted: #9a9dc0;
+    --accent: #7c5cff;
+    --accent-2: #22d3ee;
+    --radius: 20px;
+}
+
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 48px 16px;
+    background: radial-gradient(60rem 30rem at 50% -10%, #2a2470 0%, transparent 60%), var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 170px;
+}
+.card{
+    background: rgb(24, 26, 48);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+    border-radius: 20px;
+    border: 3px solid var(--card-hi);
+}
+
+.card p{
+color: var(--muted);
+font-weight: 600;
+}
+.card h1{
+    font-size: 50px;
+    transition:  0.3s ease;
+}
+
+.card h1 span{
+    font-size: 20px;
+    color: var(--muted);
+    font-weight: 300;
+}
+.card h3{
+     font-size: 18px;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -36px;
+    gap: 10px;
+}
+
+.card ul li{
+    display: flex;
+    gap: 10px;
+    color: rgb(203, 203, 203);
+}
+
+.card ul li i{
+    color: rgb(80, 86, 153);
+}
+
+.card button{
+    padding: 20px;
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--muted);
+    border-radius: 10px;
+    color: var(--text);
+    font-weight: 600;
+    margin-top: 10px;
+}
+.card p {
+    margin-bottom: 5px;
+}
+
+.card h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-top: 5px;
+}
+
+.card {
+      transition: transform 0.5s ease-in-out;
+        
+}
+.card:hover {
+   transform: translateY(-10px);
+      background-image: radial-gradient(
+        circle at center,
+        rgba(34, 211, 238, 0.5) 0%,
+        rgba(34, 211, 238, 0.25) 30%,
+        rgba(34, 211, 238, 0.08) 55%,
+        transparent 75%
+    );
+    background-color: var(--card);
+    border: 2px solid var(--accent-2);
+   
+}
+
+.card:hover p{
+    color: var(--accent-2);
+}
+
+.card:hover h1{
+    font-size: 50px;
+}
+
+.card button {
+    background-color: transparent;
+    color: var(--muted);
+    border: 1px solid var(--accent-2);
+    transition: background-image 0.3s ease, color 0.3s ease;
+}
+
+.card:hover button {
+  background-position: left;
+    color: white;
+    border: 2px solid var(--accent-2);
+}
+
+.card:hover ul li i{
+    color: var(--accent-2);
+}
+.card1{
+    position: relative;
+}
+.card1::before{
+    content: 'Most Popular';
+    background: var(--accent-2);
+    color: var(--bg);
+    font-weight: 400;
+    position: absolute;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-left: 180px;
+    margin-top: -40px;
+}
+
+@media (max-width: 900px){
+    .cards{
+        flex-direction: column;
+        padding: 20px 30px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
